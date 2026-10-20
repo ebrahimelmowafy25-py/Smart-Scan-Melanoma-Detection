@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Scan - Melanoma Detection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        img {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #2c3e50;
+        }
+
+        .loader {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tip {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🧠 Smart Scan</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    <div class="loader" id="loader"></div>
+
+    {% if prediction %}
+        <div class="result">
+            <p><strong>Prediction:</strong> {{ prediction }}</p>
+            <img src="{{ image_path }}">
+        </div>
+    {% endif %}
+
+    {% if tip %}
+        <div class="tip">
+            <p><strong>نصيحة اليوم:</strong> {{ tip }}</p>
+        </div>
+    {% endif %}
+
+    <script>
+        const form = document.querySelector('form');
+        const loader = document.getElementById('loader');
+
+        form.addEventListener('submit', () => {
+            loader.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
+
+        

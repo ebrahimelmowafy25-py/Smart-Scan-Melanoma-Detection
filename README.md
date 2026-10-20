@@ -26,7 +26,7 @@ Smart-Scan-Melanoma-Detection/
 ├── templates/
 │   └── index.html
 └── README.md
-```
+
 ## Application Screenshot
 
 ![Smart Scan Application](home.png)

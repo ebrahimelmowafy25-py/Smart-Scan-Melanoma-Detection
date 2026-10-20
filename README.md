@@ -18,6 +18,7 @@ Smart Scan is a deep learning web application designed to classify skin lesion i
 - Jupyter Notebook
 
 ## Project Structure
+```text
 Smart-Scan-Melanoma-Detection/
 ├── app.py
 ├── melanoma_model_v4.h5
@@ -26,6 +27,7 @@ Smart-Scan-Melanoma-Detection/
 ├── templates/
 │   └── index.html
 └── README.md
+```
 
 ## Application Screenshot
 

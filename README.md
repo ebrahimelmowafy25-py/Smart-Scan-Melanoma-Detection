@@ -27,6 +27,9 @@ Smart-Scan-Melanoma-Detection/
 │   └── index.html
 └── README.md
 ```
+## Application Screenshot
+
+![Smart Scan Application](home.png)
 
 ## How to Run
 1. Install the required Python libraries.
